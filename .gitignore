@@ -32,6 +32,6 @@ yarn-error.log*
 # turbo
 .turbo
 
+
 # ide
 .history
-*.DS_Store

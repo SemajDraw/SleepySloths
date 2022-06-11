@@ -1,6 +1,16 @@
 # SleepySloths
 
-This is the code base for the sleepy sloths
+Code base for the sleepy sloths
+
+## Helper commands for truffle
+
+```
+truffle create contract YourContractName
+```
+
+```
+truffle create test YourTestName
+```
 
 ## What's inside?
 
@@ -8,9 +18,9 @@ This turborepo uses [Yarn](https://classic.yarnpkg.com/lang/en/) as a package ma
 
 ### Apps and Packages
 
-- `docs`: a [Next.js](https://nextjs.org) app
-- `web`: another [Next.js](https://nextjs.org) app
-- `ui`: a stub React component library shared by both `web` and `docs` applications
+- `client`: SleepySloths client app
+- `contracts`: SleepySloths smart contracts
+- `ui`: a stub React component library
 - `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
 - `tsconfig`: `tsconfig.json`s used throughout the monorepo
 
