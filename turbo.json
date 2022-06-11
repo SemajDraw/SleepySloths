@@ -4,6 +4,12 @@
       "dependsOn": ["^build"],
       "outputs": ["dist/**", ".next/**"]
     },
+    "test": {
+      "outputs": []
+    },
+    "migrate": {
+      "outputs": []
+    },
     "lint": {
       "outputs": []
     },

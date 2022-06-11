@@ -4,6 +4,11 @@
   "description": "Smart contracts for the Sleepy Sloths NFT's",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "build": "truffle compile",
+    "test": "truffle test",
+    "migrate": "truffle migrate"
+  },
   "dependencies": {
     "truffle": "5.5.18",
     "web3": "1.7.3"

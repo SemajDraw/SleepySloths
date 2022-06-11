@@ -9,18 +9,32 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
+    "test": "turbo run test",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{js,ts,tsx,md}\""
+    "migrate": "turbo run migrate",
+    "format": "prettier --write \"**/*.{js,ts,tsx,md}\"",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "eslint-config-custom": "latest",
-    "prettier": "latest",
-    "turbo": "latest"
+    "husky": "8.0.1",
+    "lint-staged": "13.0.1",
+    "prettier": "2.6.2",
+    "prettier-plugin-solidity": "1.0.0-beta.19",
+    "turbo": "1.2.16"
   },
   "engines": {
     "npm": ">=7.0.0",
     "node": ">=16.0.0"
   },
   "dependencies": {},
-  "packageManager": "yarn@1.22.19"
+  "packageManager": "yarn@1.22.19",
+  "lint-staged": {
+    "**/*.{js,ts,jsx,tsx}": [
+      "eslint --fix"
+    ],
+    "**/*": [
+      "prettier --write --ignore-unknown"
+    ]
+  }
 }
