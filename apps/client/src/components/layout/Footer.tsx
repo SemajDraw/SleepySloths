@@ -5,14 +5,13 @@ import {
   Text,
   useColorModeValue,
 } from '@chakra-ui/react';
-import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
-import { SocialButton } from 'ui';
 import { copyRight } from '../../constants/Footer';
 import { SocialButtonStack } from '../SocialButtonsStack';
 
 export const Footer = () => {
   return (
     <Box
+      as={'footer'}
       bg={useColorModeValue('gray.50', 'gray.900')}
       color={useColorModeValue('gray.700', 'gray.200')}
     >

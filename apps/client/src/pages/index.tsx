@@ -1,7 +1,8 @@
-import { Box } from '@chakra-ui/react';
+import { Box, Container, Flex } from '@chakra-ui/react';
 
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import { Faq } from '../components/Faq';
 
 const Index: NextPage = () => {
   return (
@@ -11,6 +12,15 @@ const Index: NextPage = () => {
         <meta name="description" content="Home page of the SleepySloths NFT" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Flex
+        w={'100%'}
+        p={10}
+        bg={'gray.200'}
+        align={'center'}
+        justify={'center'}
+      >
+        <Faq />
+      </Flex>
     </Box>
   );
 };

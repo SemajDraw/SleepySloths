@@ -10,8 +10,6 @@ import {
 } from '@chakra-ui/react';
 import { Slant as Hamburger } from 'hamburger-react';
 import { useState } from 'react';
-import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
-import { SocialButton } from 'ui';
 import { Props } from '../../interfaces/component';
 import { SocialButtonStack } from '../SocialButtonsStack';
 
