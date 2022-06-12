@@ -1,16 +1,19 @@
 import {
   Box,
+  Button,
   Flex,
   Link,
-  Button,
+  Slide,
   Stack,
   Text,
-  Slide,
   useBreakpointValue,
 } from '@chakra-ui/react';
 import { Slant as Hamburger } from 'hamburger-react';
 import { useState } from 'react';
+import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
+import { SocialButton } from 'ui';
 import { Props } from '../../interfaces/component';
+import { SocialButtonStack } from '../SocialButtonsStack';
 
 interface NavLinkProps extends Props {
   href: string;
@@ -77,7 +80,7 @@ export const Navbar = () => {
       bg={'transparent'}
       px={4}
     >
-      <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
+      <Flex h={16} align={'center'} justify={'space-between'}>
         <Box>
           <NavLink href={'/'}>
             <Text color={'purple.300'} fontSize={'2xl'} fontWeight={700}>
@@ -86,24 +89,28 @@ export const Navbar = () => {
           </NavLink>
         </Box>
 
-        <Flex alignItems={'center'}>
-          <Stack direction={'row'} spacing={7}>
-            <Box display={{ base: 'block', md: 'none' }}>
-              <HamburgerMenu />
-            </Box>
-            <Button
-              display={{ base: 'none', md: 'block' }}
-              isActive={false}
-              mt={2}
-              bg={account ? 'purple.300' : 'purple.200'}
-              _hover={{ bg: account ? 'purple.200' : 'purple.100' }}
-              color={'white'}
-              onClick={connectWallet}
-            >
-              Mint
-            </Button>
-          </Stack>
-        </Flex>
+        <Box display={{ base: 'block', md: 'none' }}>
+          <HamburgerMenu />
+        </Box>
+
+        <Stack
+          direction={'row'}
+          align={'center'}
+          spacing={8}
+          display={{ base: 'none', md: 'inherit' }}
+        >
+          <SocialButtonStack direction={'row'} spacing={6} />
+          <Button
+            isActive={false}
+            mt={2}
+            bg={account ? 'purple.300' : 'purple.200'}
+            _hover={{ bg: account ? 'purple.200' : 'purple.100' }}
+            color={'white'}
+            onClick={connectWallet}
+          >
+            Mint
+          </Button>
+        </Stack>
       </Flex>
     </Box>
   );

@@ -1,2 +1,1 @@
-export const copyRight =
-  'Copyright &#169 2022 SLEEPYSLOTHS.xyz. All rights reserved.';
+export const copyRight = 'Copyright © 2022 SLEEPYSLOTHS All rights reserved.';
