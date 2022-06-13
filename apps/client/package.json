@@ -13,6 +13,7 @@
     "@chakra-ui/react": "2.2.1",
     "@emotion/react": "11.9.0",
     "@emotion/styled": "11.8.1",
+    "@rumess/react-flip-countdown": "^1.2.3",
     "contracts": "*",
     "framer-motion": "6.3.4",
     "hamburger-react": "^2.5.0",

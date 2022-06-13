@@ -71,13 +71,7 @@ export const Navbar = () => {
   const connectWallet = () => window.alert('Shit');
 
   return (
-    <Box
-      as={'header'}
-      position={'fixed'}
-      width={'100%'}
-      bg={'transparent'}
-      px={4}
-    >
+    <Box as={'header'} width={'100%'} bg={'black'} px={4}>
       <Flex h={16} align={'center'} justify={'space-between'}>
         <Box>
           <NavLink href={'/'}>

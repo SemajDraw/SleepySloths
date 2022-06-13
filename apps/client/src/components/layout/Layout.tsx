@@ -7,7 +7,6 @@ export const Layout = ({ children }: Props) => {
   return (
     <Box h={'100%'} w={'100%'}>
       <Navbar />
-      <Box h={'500px'} />
       {children}
       <Footer />
     </Box>
