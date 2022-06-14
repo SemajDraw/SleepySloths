@@ -69,7 +69,7 @@ export const useActiveId = (ids: string[]): string => {
       }
     );
 
-    elements.forEach((el) => el && observer.observe(el));
+    elements.forEach((element) => element && observer.observe(element));
 
     if (intersectingSections.length) {
       const newCurrentActiveSectionId = intersectingSections
@@ -85,7 +85,7 @@ export const useActiveId = (ids: string[]): string => {
     }
 
     return () => {
-      elements.forEach((el) => el && observer.unobserve(el));
+      elements.forEach((element) => element && observer.unobserve(element));
     };
   }, [currentActiveSectionId, ids, intersectingSections, isBelowLg]);
 

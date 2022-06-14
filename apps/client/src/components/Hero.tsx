@@ -32,10 +32,13 @@ export const Hero = () => {
         </Flex>
         <Stack flex={1} spacing={{ base: 5, md: 10 }} justify={'center'}>
           <Flex direction={'column'} align={{ base: 'center' }}>
-            <Heading fontWeight={600} fontSize={{ base: '5em', lg: '6em' }}>
-              <Text color={'white'} position={'relative'}>
-                Sleepy Sloths
-              </Text>
+            <Heading
+              as={'h1'}
+              color={'white'}
+              fontWeight={600}
+              fontSize={{ base: '5rem', lg: '6rem' }}
+            >
+              Sleepy Sloths
             </Heading>
             <Text mt={0} fontSize={{ base: '3em', lg: '4em' }} color={'white'}>
               6,969 of the Sleepiest Sloths
