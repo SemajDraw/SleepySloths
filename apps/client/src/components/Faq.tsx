@@ -81,7 +81,11 @@ export const Faq = () => {
               boxSize={'md'}
             />
           </Flex>
-          <Stack spacing={4} w={'700px'} ml={4}>
+          <Stack
+            spacing={4}
+            w={{ base: '100%', lg: '700px' }}
+            ml={{ base: 0, md: 4 }}
+          >
             <Accordion allowToggle>
               {panels.map((panel, i) => (
                 <AccordionItem key={`accordian-item-${i}`} mb={4} bg={'white'}>
