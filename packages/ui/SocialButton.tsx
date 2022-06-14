@@ -10,7 +10,7 @@ interface SocialButtonProps {
 export const SocialButton = ({ children, label, href }: SocialButtonProps) => {
   return (
     <chakra.button
-      bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
+      bg={'white'}
       rounded={'full'}
       w={8}
       h={8}
@@ -22,7 +22,7 @@ export const SocialButton = ({ children, label, href }: SocialButtonProps) => {
       justifyContent={'center'}
       transition={'background 0.3s ease'}
       _hover={{
-        bg: useColorModeValue('blackAlpha.200', 'whiteAlpha.200'),
+        bg: 'gray.200',
       }}
     >
       <VisuallyHidden>{label}</VisuallyHidden>

@@ -1,6 +1,6 @@
 import web3 from 'web3';
 
-export const fromWei = (n: any) => {
+export const fromWei = (n: any): string => {
   return web3.utils.fromWei(n.toString(), 'ether');
 };
 

@@ -1,7 +1,7 @@
 import { Button, Flex, Slide, Text } from '@chakra-ui/react';
 import { useState } from 'react';
 import { useCookies } from 'react-cookie';
-import { termsAndConditions } from '../constants/CookieSlider';
+import { TERMS_CONDITIONS } from '../constants';
 
 export const CookieSlider = () => {
   const [cookies, setCookie] = useCookies(['__cookies']);
@@ -20,14 +20,15 @@ export const CookieSlider = () => {
         justify={{ base: 'space-between', md: 'space-evenly' }}
         align={'center'}
       >
-        <Text>{termsAndConditions}</Text>
+        <Text>{TERMS_CONDITIONS}</Text>
         <Button
           onClick={() => {
             setOpen(false);
             setCookie('__cookies', { accepted: true }, { path: '/' });
           }}
-          colorScheme="white"
-          variant={{ base: 'link', md: 'solid' }}
+          colorScheme={'whiteAlpha'}
+          variant={{ base: 'link', md: 'outline' }}
+          fontWeight={'700'}
         >
           Accept
         </Button>

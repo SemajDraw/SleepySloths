@@ -5,7 +5,7 @@ import {
   Text,
   useColorModeValue,
 } from '@chakra-ui/react';
-import { copyRight } from '../../constants/Footer';
+import { COPYRIGHT_STATEMENT } from '../../constants';
 import { SocialButtonStack } from '../SocialButtonsStack';
 
 export const Footer = () => {
@@ -24,7 +24,7 @@ export const Footer = () => {
         justify={{ base: 'center', md: 'space-around' }}
         align={{ base: 'center', md: 'center' }}
       >
-        <Text>{copyRight}</Text>
+        <Text>{COPYRIGHT_STATEMENT}</Text>
         <SocialButtonStack direction={'row'} spacing={6} />
       </Container>
     </Box>
