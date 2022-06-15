@@ -1,9 +1,6 @@
 import {
   Box,
-  Container,
-  Divider,
   Flex,
-  Grid,
   GridItem,
   Heading,
   List,
@@ -12,7 +9,6 @@ import {
   Stack,
   Text,
 } from '@chakra-ui/react';
-import { Fragment } from 'react';
 
 interface Phase {
   title: string;
@@ -26,7 +22,7 @@ const phases: Phase[] = [
   {
     title: 'PHASE 1',
     body: {
-      title: "UGH, I DON'T WANNA GET UP!",
+      title: 'UGHHH, WH... WHERE AM I?',
       body: (
         <List>
           {[
@@ -51,10 +47,10 @@ const phases: Phase[] = [
       body: (
         <List>
           <ListItem>
-            <Heading>ATTENTION ALL TREE CLINGERS: </Heading>
             <Text>
-              There is a high chance some of you will be exposed to radioactive
-              rainfall... This may affect your baby sloths...
+              ATTENTION ALL TREE CLINGERS: There is a high chance some of you
+              will be exposed to radioactive rainfall... This may affect your
+              baby sloths...
             </Text>
           </ListItem>
         </List>
@@ -68,9 +64,7 @@ const phases: Phase[] = [
       body: (
         <List>
           <ListItem display={'flex'}>
-            <Text>Baby Sloths are born</Text>
-            <Heading>BUT</Heading>
-            <Text>{"they're not so sleepy"}</Text>
+            <Text>{"Baby Sloths are born BUT they're not so sleepy"}</Text>
           </ListItem>
         </List>
       ),
@@ -115,53 +109,46 @@ const phases: Phase[] = [
 ];
 
 const PhaseItem = ({ title, body }: Phase) => (
-  <Fragment>
-    <Divider />
-    <GridItem colSpan={{ base: 12, md: 4 }}>
-      <Heading size={'md'}>{title}</Heading>
-    </GridItem>
+  <Box w={'100%'}>
+    <SimpleGrid columns={13}>
+      <GridItem colSpan={{ base: 12, md: 5 }} pb={3}>
+        <Heading w={'100%'} fontSize={'calc((2.2 - 1) * 1.2vw + 1rem)'}>
+          {title}
+        </Heading>
+      </GridItem>
+      <GridItem colSpan={1} />
 
-    <GridItem colSpan={{ base: 12, md: 7 }}>
-      <Stack direction={'column'}>
-        <Heading size={'md'}>{body.title}</Heading>
-        {body.body}
-      </Stack>
-    </GridItem>
-  </Fragment>
+      <GridItem colSpan={{ base: 12, md: 7 }}>
+        <Stack direction={'column'}>
+          <Heading fontSize={'calc((2.2 - 1) * 1.2vw + 1rem)'} pb={3}>
+            {body.title}
+          </Heading>
+          <Box fontSize={'calc((1.2 - 1) * 1.2vw + 1rem)'}>{body.body}</Box>
+        </Stack>
+      </GridItem>
+    </SimpleGrid>
+  </Box>
 );
 
 export const JungleMap = () => {
   return (
-    <Box id={'junglemap'} py={6} px={5}>
-      <Stack spacing={4} width={'100%'} direction={'column'}>
-        <Stack
-          p={5}
-          alignItems={'center'}
-          justifyContent={{
-            base: 'flex-start',
-            md: 'space-around',
-          }}
-          direction={{
-            base: 'column',
-            md: 'row',
-          }}
+    <Flex id={'junglemap'} py={20} width={'100%'} px={{ base: 6, sm: 8 }}>
+      <Stack spacing={10} width={'100%'} direction={'column'} align={'center'}>
+        <Flex width={'100%'} align={'center'} justify={'center'} pb={10}>
+          <Heading fontSize={'calc((2.2 - 1) * 1.2vw + 1rem)'}>
+            The Jungle Map
+          </Heading>
+        </Flex>
+        <SimpleGrid
+          spacing={20}
+          columns={1}
+          maxWidth={{ base: '100%', md: '75%' }}
         >
-          <Stack
-            width={{
-              base: '100%',
-              md: '40%',
-            }}
-            textAlign={'center'}
-          >
-            <Heading size={'lg'}>The Jungle Map</Heading>
-          </Stack>
-        </Stack>
-        <SimpleGrid columns={12} gap={1}>
           {phases.map((phase, i) => (
-            <PhaseItem key={`phase${i}`} {...phase} />
+            <PhaseItem key={`phase-${i}`} {...phase} />
           ))}
         </SimpleGrid>
       </Stack>
-    </Box>
+    </Flex>
   );
 };

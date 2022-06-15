@@ -21,10 +21,8 @@ export const Hero = () => {
           <Image
             borderRadius={20}
             alt={'Hero Image'}
-            fit={'cover'}
-            align={'center'}
-            w={'100%'}
             h={'100%'}
+            w={'100%'}
             src={
               'https://images.squarespace-cdn.com/content/v1/6274fd6bf7507d4cea99760f/be60df70-3a79-46a9-ad48-956dd2f88ba7/1_0_GIF_2.GIF?format=1500w'
             }

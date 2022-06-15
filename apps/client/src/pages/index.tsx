@@ -5,6 +5,7 @@ import Head from 'next/head';
 import { Faq } from '../components/Faq';
 import { Home } from '../components/Home';
 import { JungleMap } from '../components/JungleMap';
+import { ScrollCarousel } from '../components/ScrollCarousel';
 
 const Index: NextPage = () => {
   return (
@@ -15,6 +16,7 @@ const Index: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Home />
+      <ScrollCarousel />
       <JungleMap />
       <Faq />
     </Box>

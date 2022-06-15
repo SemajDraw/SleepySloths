@@ -1,6 +1,7 @@
 import { VStack } from '@chakra-ui/react';
 import { Attributes } from './Attributes';
 import { Hero } from './Hero';
+import { ScrollCarousel } from './ScrollCarousel';
 
 export const Home = () => {
   return (

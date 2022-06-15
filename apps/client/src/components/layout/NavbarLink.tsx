@@ -2,8 +2,8 @@ import { useBreakpointValue, useTheme } from '@chakra-ui/react';
 import { useEffect, useRef } from 'react';
 import { animated, config, useSpring } from 'react-spring';
 import { NAVBAR_HEIGHTS } from '../../constants';
+import { useIsHovered } from '../../hooks';
 import { Props } from '../../interfaces/component';
-import { useIsHovered } from '../../utils/navbar.utils';
 import { Link } from '../Link';
 
 const AnimatedLink = animated(Link);

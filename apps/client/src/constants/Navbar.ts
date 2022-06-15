@@ -4,6 +4,12 @@ export const NAVBAR_STATES = {
   STUCK: 'STUCK',
 };
 
+export const SCROLL_DIRECTIONS = {
+  UP: 'UP',
+  DOWN: 'DOWN',
+  INITIAL: 'INITIAL',
+};
+
 export const NAVBAR_HEIGHTS = {
   DESKTOP: 78,
   MOBILE: 72,

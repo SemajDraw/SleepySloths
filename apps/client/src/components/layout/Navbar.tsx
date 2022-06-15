@@ -6,13 +6,10 @@ import {
   getNavbarAnimationStyles,
   NAVBAR_HEIGHTS,
   NAVBAR_STATES,
+  SCROLL_DIRECTIONS,
   SECTIONS,
 } from '../../constants';
-import {
-  SCROLL_DIRECTIONS,
-  useActiveId,
-  useScrollInfo,
-} from '../../utils/navbar.utils';
+import { useActiveId, useScrollInfo } from '../../hooks';
 import { Link } from '../Link';
 import { MintButton } from '../MintButton';
 import { SocialButtonStack } from '../SocialButtonsStack';
