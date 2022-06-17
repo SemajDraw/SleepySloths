@@ -130,7 +130,7 @@ const PhaseItem = ({ title, body }: Phase) => (
   </Box>
 );
 
-export const JungleMap = () => {
+export const Phases = () => {
   return (
     <Flex id={'junglemap'} py={20} width={'100%'} px={{ base: 6, sm: 8 }}>
       <Stack spacing={10} width={'100%'} direction={'column'} align={'center'}>

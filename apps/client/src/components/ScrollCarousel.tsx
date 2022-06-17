@@ -17,7 +17,11 @@ function ScrollCarousels({ children }: Props) {
   // the argument is the fps that the hook uses,
   // since react spring interpolates values we can safely reduce this below 60
   const scrollY = useWindowScroll(45);
-  const [{ st, xy }, set] = useSpring(() => ({ st: 0, xy: [0, 0] }));
+  const [{ st, xy }, set] = useSpring(() => ({
+    st: 0,
+    xy: [0, 0],
+    loop: true,
+  }));
 
   useEffect(() => {
     set({ st: scrollY });
@@ -35,11 +39,11 @@ function ScrollCarousels({ children }: Props) {
   // we want to set the scrolling element *height* to the value of the *width* of the horizontal content
   // plus some other calculations to convert it from a width to a height value
   const elHeight =
-    scrollWidth - (window.innerWidth - window.innerHeight) + width * 0.5; // scroll away when final viewport width is 0.5 done
+    scrollWidth - (window.innerWidth - window.innerHeight) + width; // scroll away when final viewport width is 0.5 done
 
   const interpTransform = to([st, xy], (o, xy) => {
-    const mouseMoveDepth = 40; // not necessary, but nice to have
-    const x = width - (top - o);
+    const mouseMoveDepth = 1000; // not necessary, but nice to have
+    const x = width - (top - o) - width * 0.9;
 
     // (width * 0.5) so that it starts moving just slightly before it comes into view
     if (x < -window.innerHeight - width) {
@@ -60,7 +64,7 @@ function ScrollCarousels({ children }: Props) {
 
   return (
     <Box onMouseMove={onMouseMove} bg={'black'} ref={refHeight}>
-      <Box position={'sticky'} overflow={'hidden'}>
+      <Box>
         <AnimatedBox
           display={'flex'}
           style={{ transform: interpTransform }}
@@ -84,6 +88,9 @@ const urls = [
   'https://picsum.photos/720/540/?image=88',
   'https://picsum.photos/720/540/?image=512',
   'https://picsum.photos/720/540/?image=435',
+  'https://picsum.photos/720/540/?image=88',
+  'https://picsum.photos/720/540/?image=512',
+  'https://picsum.photos/720/540/?image=435',
 ];
 
 export const ScrollCarousel = () => {
@@ -92,8 +99,8 @@ export const ScrollCarousel = () => {
       <ClientComponent>
         <ScrollCarousels>
           {urls.map((src, i) => (
-            <Box key={`image-${i}`} mr={2}>
-              <Image src={src} alt="" />
+            <Box key={`image-${i}`} h={'15rem'} w={'15rem'} mr={2}>
+              <Image src={src} alt="" h={'100%'} w={'100%'} />
             </Box>
           ))}
         </ScrollCarousels>

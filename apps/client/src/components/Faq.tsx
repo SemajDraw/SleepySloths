@@ -6,12 +6,12 @@ import {
   AccordionPanel,
   Container,
   Flex,
+  Heading,
   Image,
   Stack,
   Text,
   useBreakpointValue,
 } from '@chakra-ui/react';
-import { ReactElement } from 'react';
 
 interface PanelProps {
   title: string;
@@ -67,9 +67,9 @@ export const Faq = () => {
           justify={'center'}
         >
           <Flex direction={'column'} align={'center'} justify={'end'} mr={4}>
-            <Text fontSize={'4xl'} pb={8}>
+            <Heading fontSize={'calc((2.2 - 1) * 1.2vw + 1rem)'} pb={8}>
               WTF?
-            </Text>
+            </Heading>
             <Image
               display={{ base: 'none', md: 'inherit' }}
               rounded={'md'}
@@ -92,11 +92,7 @@ export const Faq = () => {
                   {({ isExpanded }: { isExpanded: boolean }) => (
                     <>
                       <Text fontSize={'xl'}>
-                        <AccordionButton
-                          bg={'white'}
-                          p={6}
-                          _hover={{ border: '2px' }}
-                        >
+                        <AccordionButton bg={'white'} p={6}>
                           <Flex flex="1" textAlign="left" align={'center'}>
                             <AddIcon boxSize={4} mr={3} />
                             <Text fontSize={'2xl'}>{panel.title}</Text>

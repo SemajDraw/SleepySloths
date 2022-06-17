@@ -4,8 +4,7 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import { Faq } from '../components/Faq';
 import { Home } from '../components/Home';
-import { JungleMap } from '../components/JungleMap';
-import { ScrollCarousel } from '../components/ScrollCarousel';
+import { Phases } from '../components/Phases';
 
 const Index: NextPage = () => {
   return (
@@ -16,8 +15,7 @@ const Index: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Home />
-      <ScrollCarousel />
-      <JungleMap />
+      <Phases />
       <Faq />
     </Box>
   );
