@@ -1,5 +1,5 @@
 import {
-  Box,
+  Box as ChakraBox,
   Flex,
   GridItem,
   Heading,
@@ -9,6 +9,9 @@ import {
   Stack,
   Text,
 } from '@chakra-ui/react';
+import { Variants } from 'framer-motion';
+
+import { Box } from 'ui';
 
 interface Phase {
   title: string;
@@ -108,8 +111,29 @@ const phases: Phase[] = [
   },
 ];
 
+const { initial, whileInView }: Variants = {
+  initial: {
+    opacity: 0,
+    y: 200,
+  },
+  whileInView: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: 'spring',
+      bounce: 0.4,
+      duration: 0.8,
+    },
+  },
+};
+
 const PhaseItem = ({ title, body }: Phase) => (
-  <Box w={'100%'}>
+  <Box
+    initial={initial}
+    whileInView={whileInView}
+    viewport={{ once: true }}
+    w={'100%'}
+  >
     <SimpleGrid columns={13}>
       <GridItem colSpan={{ base: 12, md: 5 }} pb={3}>
         <Heading w={'100%'} fontSize={'calc((2.2 - 1) * 1.2vw + 1rem)'}>
@@ -123,7 +147,9 @@ const PhaseItem = ({ title, body }: Phase) => (
           <Heading fontSize={'calc((2.2 - 1) * 1.2vw + 1rem)'} pb={3}>
             {body.title}
           </Heading>
-          <Box fontSize={'calc((1.2 - 1) * 1.2vw + 1rem)'}>{body.body}</Box>
+          <ChakraBox fontSize={'calc((1.2 - 1) * 1.2vw + 1rem)'}>
+            {body.body}
+          </ChakraBox>
         </Stack>
       </GridItem>
     </SimpleGrid>

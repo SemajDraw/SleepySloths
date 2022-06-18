@@ -1,4 +1,4 @@
-import { AddIcon, ChevronDownIcon, ChevronRightIcon } from '@chakra-ui/icons';
+import { AddIcon, ChevronRightIcon } from '@chakra-ui/icons';
 import {
   Accordion,
   AccordionButton,
@@ -9,9 +9,11 @@ import {
   Heading,
   Image,
   Stack,
-  Text,
+  Text as ChakraText,
   useBreakpointValue,
 } from '@chakra-ui/react';
+
+import { Box, Text } from 'ui';
 
 interface PanelProps {
   title: string;
@@ -54,13 +56,15 @@ const panels: PanelProps[] = [
 export const Faq = () => {
   return (
     <Flex
+      id={'faq'}
       w={'100%'}
       py={{ base: 6, lg: 14 }}
       bg={'gray.200'}
       align={'center'}
       justify={'center'}
+      minH={'90vh'}
     >
-      <Container id={'faq'} maxW={'8xl'}>
+      <Container maxW={'8xl'}>
         <Flex
           direction={useBreakpointValue({ base: 'column', md: 'row' })}
           align={'center'}
@@ -88,20 +92,39 @@ export const Faq = () => {
           >
             <Accordion allowToggle>
               {panels.map((panel, i) => (
-                <AccordionItem key={`accordian-item-${i}`} mb={4} bg={'white'}>
+                <AccordionItem key={`accordian-item-${i}`} mb={4}>
                   {({ isExpanded }: { isExpanded: boolean }) => (
                     <>
-                      <Text fontSize={'xl'}>
+                      <Text
+                        bg={'white'}
+                        whileHover={{ scale: 1.025 }}
+                        whileTap={{ scale: 0.975 }}
+                        transition={{
+                          type: 'spring',
+                          damping: 10,
+                          stiffness: 150,
+                        }}
+                        as={'h2'}
+                        fontSize={'xl'}
+                      >
                         <AccordionButton bg={'white'} p={6}>
                           <Flex flex="1" textAlign="left" align={'center'}>
                             <AddIcon boxSize={4} mr={3} />
-                            <Text fontSize={'2xl'}>{panel.title}</Text>
+                            <ChakraText fontSize={'2xl'}>
+                              {panel.title}
+                            </ChakraText>
                           </Flex>
-                          {isExpanded ? (
-                            <ChevronDownIcon boxSize={6} />
-                          ) : (
+                          <Box
+                            animate={{
+                              rotate: isExpanded ? 90 : 0,
+                              transition: {
+                                type: 'spring',
+                                stiffness: 80,
+                              },
+                            }}
+                          >
                             <ChevronRightIcon boxSize={6} />
-                          )}
+                          </Box>
                         </AccordionButton>
                       </Text>
                       <AccordionPanel bg={'gray.200'} pb={4}>

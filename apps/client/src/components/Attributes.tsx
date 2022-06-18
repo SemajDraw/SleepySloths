@@ -1,4 +1,4 @@
-import { Container, Flex, Grid, GridItem, Stack, Text } from '@chakra-ui/react';
+import { Container, Flex, Grid, GridItem, Text } from '@chakra-ui/react';
 
 const attributes: string[] = [
   '6969 Sleepy Sloths',

@@ -1,4 +1,4 @@
-import { VStack } from '@chakra-ui/react';
+import { Flex, VStack } from '@chakra-ui/react';
 import { Attributes } from './Attributes';
 import { Hero } from './Hero';
 import { ScrollCarousel } from './ScrollCarousel';
@@ -13,11 +13,12 @@ export const Home = () => {
       pt={{ base: 10, lg: 12 }}
       pb={{ base: 12, lg: 12 }}
       justify={'space-between'}
-      overflow={'hidden'}
     >
       <Hero />
       <Attributes />
-      <ScrollCarousel />
+      <Flex maxW={'7xl'} overflow={'hidden'}>
+        <ScrollCarousel />
+      </Flex>
     </VStack>
   );
 };

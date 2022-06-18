@@ -1,12 +1,8 @@
 import { useBreakpointValue, useTheme } from '@chakra-ui/react';
 import { useEffect, useRef } from 'react';
-import { animated, config, useSpring } from 'react-spring';
 import { NAVBAR_HEIGHTS } from '../../constants';
-import { useIsHovered } from '../../hooks';
 import { Props } from '../../interfaces/component';
 import { Link } from '../Link';
-
-const AnimatedLink = animated(Link);
 
 interface NavbarLinkProps extends Props {
   isActive: boolean;
@@ -15,11 +11,7 @@ interface NavbarLinkProps extends Props {
 
 export const NavbarLink = ({ children, to, isActive }: NavbarLinkProps) => {
   const theme = useTheme();
-  const [isHovered, listeners] = useIsHovered();
-  const animatedValues = useSpring({
-    color: isActive || isHovered ? 'orange' : theme.colors.gray['400'],
-    config: config.gentle,
-  });
+
   const isBelowLg = useBreakpointValue({ base: true, lg: false });
   const scrollSectionRef = useRef<Element | null>(null);
 
@@ -28,7 +20,7 @@ export const NavbarLink = ({ children, to, isActive }: NavbarLinkProps) => {
   }, [to]);
 
   return (
-    <AnimatedLink
+    <Link
       fontWeight={700}
       textTransform="lowercase"
       fontSize="lg"
@@ -45,10 +37,13 @@ export const NavbarLink = ({ children, to, isActive }: NavbarLinkProps) => {
 
         window.scrollTo({ top: elementTop, behavior: 'smooth' });
       }}
-      style={animatedValues}
-      {...listeners}
+      color={isActive ? 'orange' : theme.colors.gray['400']}
+      _hover={{
+        color: 'orange',
+        textDecoration: 'none',
+      }}
     >
       {children}
-    </AnimatedLink>
+    </Link>
   );
 };
