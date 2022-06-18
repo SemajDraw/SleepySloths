@@ -64,7 +64,7 @@ export const Faq = () => {
       justify={'center'}
       minH={'90vh'}
     >
-      <Container maxW={'8xl'}>
+      <Container maxW={'7xl'}>
         <Flex
           direction={useBreakpointValue({ base: 'column', md: 'row' })}
           align={'center'}

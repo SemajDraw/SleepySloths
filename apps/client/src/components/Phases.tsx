@@ -158,8 +158,20 @@ const PhaseItem = ({ title, body }: Phase) => (
 
 export const Phases = () => {
   return (
-    <Flex id={'junglemap'} py={20} width={'100%'} px={{ base: 6, sm: 8 }}>
-      <Stack spacing={10} width={'100%'} direction={'column'} align={'center'}>
+    <Flex
+      id={'junglemap'}
+      justify={'center'}
+      py={20}
+      width={'100%'}
+      px={{ base: 6, sm: 8 }}
+    >
+      <Stack
+        maxW={{ base: '10xl', md: '8xl' }}
+        spacing={10}
+        width={'100%'}
+        direction={'column'}
+        align={'center'}
+      >
         <Flex width={'100%'} align={'center'} justify={'center'} pb={10}>
           <Heading fontSize={'calc((2.2 - 1) * 1.2vw + 1rem)'}>
             The Jungle Map
@@ -168,7 +180,7 @@ export const Phases = () => {
         <SimpleGrid
           spacing={20}
           columns={1}
-          maxWidth={{ base: '100%', md: '75%' }}
+          maxWidth={{ base: '100%', md: '90%', lg: '75%' }}
         >
           {phases.map((phase, i) => (
             <PhaseItem key={`phase-${i}`} {...phase} />
