@@ -1,3 +1,5 @@
+import '@fontsource/finger-paint';
+import '@fontsource/indie-flower';
 import { ChakraProvider } from '@chakra-ui/react';
 
 import { AppProps } from 'next/app';
@@ -7,7 +9,7 @@ import { CookieSlider } from '../components/CookieSlider';
 import { Layout } from '../components/layout/Layout';
 import theme from '../theme/theme';
 
-function MyApp({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps }: AppProps) {
   return (
     <CookiesProvider>
       <ChakraProvider resetCSS theme={theme}>
@@ -20,4 +22,4 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
-export default MyApp;
+export default App;

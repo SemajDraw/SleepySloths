@@ -1,6 +1,7 @@
 import {
   Box as ChakraBox,
   Flex,
+  Heading,
   Stack,
   Text,
   useBreakpointValue,
@@ -31,8 +32,6 @@ export const Navbar = memo(function Navbar() {
     const onScroll = throttle(() => {
       const { scrollY } = window;
 
-      // on desktops, set the navbar as "stuck" whenever the user scrolls the
-      // page down
       if (!isMdDown) {
         setNavbarState(
           scrollY > 1 ? NAVBAR_STATES.STUCK : NAVBAR_STATES.INITIAL
@@ -40,8 +39,6 @@ export const Navbar = memo(function Navbar() {
         return;
       }
 
-      // if the user scrolls DOWN, the mobile navbar is NOT set as `HIDDEN`, and
-      // the user scroll past the height of the navbar
       if (
         scrollDirection === SCROLL_DIRECTIONS.DOWN &&
         navbarState !== NAVBAR_STATES.HIDDEN
@@ -49,15 +46,10 @@ export const Navbar = memo(function Navbar() {
         setNavbarState(NAVBAR_STATES.HIDDEN);
       }
 
-      // if the user scrolls UP
       if (scrollDirection === SCROLL_DIRECTIONS.UP) {
-        // if the user scroll to the very top of the page
         if (scrollY <= 1 && navbarState !== NAVBAR_STATES.INITIAL) {
           setNavbarState(NAVBAR_STATES.INITIAL);
-        }
-
-        // if the user scrolled UP and is below the navbar height
-        else if (scrollY > NAVBAR_HEIGHTS.MOBILE) {
+        } else if (scrollY > NAVBAR_HEIGHTS.MOBILE) {
           setNavbarState(NAVBAR_STATES.STUCK);
         }
       }
@@ -69,7 +61,7 @@ export const Navbar = memo(function Navbar() {
 
   return (
     <Box
-      bg={navbarState === NAVBAR_STATES.INITIAL ? 'black' : 'gray.800'}
+      bg={navbarState === NAVBAR_STATES.INITIAL ? 'black' : 'gray.900'}
       position="sticky"
       top={0}
       height={{
@@ -92,9 +84,9 @@ export const Navbar = memo(function Navbar() {
               }}
               href={'/'}
             >
-              <Text color={'purple.300'} fontSize={'2xl'} fontWeight={700}>
-                Sleepy Sloths
-              </Text>
+              <Heading fontSize={'3xl'} fontWeight={700}>
+                SleepySloths
+              </Heading>
             </Link>
           </ChakraBox>
           <Stack direction={'row'} spacing={6}>

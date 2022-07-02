@@ -29,11 +29,8 @@ const phases: Phase[] = [
       body: (
         <List>
           {[
-            'Sleepy Sloths are woken from their eternal slumbar',
+            'Sleepy Sloths are woken from their once eternal slumbar',
             "Where's my coffee!!??",
-            'ETH/SOL Giveaway',
-            '10 Sleepy Sloths Airdropped',
-            'Community Bank Opens (25% of all secondary sales revenue)',
           ].map((item, i) => (
             <ListItem key={`phase-1-item-${i}`}>
               <Text>{item}</Text>
@@ -49,62 +46,32 @@ const phases: Phase[] = [
       title: 'WARNING: INCOMING MONSOON SEASON',
       body: (
         <List>
-          <ListItem>
-            <Text>
-              ATTENTION ALL TREE CLINGERS: There is a high chance some of you
-              will be exposed to radioactive rainfall... This may affect your
-              baby sloths...
-            </Text>
-          </ListItem>
+          {[
+            'ETH Giveaway to 1 lucky minter when all Sleepy Sloths have found their trees',
+            '10 Sleepy Sloths Airdropped',
+          ].map((item, i) => (
+            <ListItem key={`phase-1-item-${i}`}>
+              <Text>{item}</Text>
+            </ListItem>
+          ))}
         </List>
       ),
     },
   },
+
   {
     title: 'PHASE 3',
-    body: {
-      title: 'CALLING All BABY SLOTHS... WAKE UP!!!',
-      body: (
-        <List>
-          <ListItem display={'flex'}>
-            <Text>{"Baby Sloths are born BUT they're not so sleepy"}</Text>
-          </ListItem>
-        </List>
-      ),
-    },
-  },
-  {
-    title: 'PHASE 4',
     body: {
       title: 'READY THE BATTLE BRANCHES!',
       body: (
         <List>
-          {[
-            `Sleepy Town Hall meeeting to discuss how to defend our forest aka
-              (what to do with the community reserves). All holders will be able
-              to vote!`,
-          ].map((item, i) => (
-            <ListItem key={`phase-4-item-${i}`}>
-              <Text>{item}</Text>
-            </ListItem>
-          ))}
-        </List>
-      ),
-    },
-  },
-  {
-    title: 'PHASE 5',
-    body: {
-      title: 'BABY SLOTHS GO TO JUNGLE ACADEMY',
-      body: (
-        <List>
-          {[
-            'Baby Sloths can be sent to Jungle Academy where they will evolve...',
-          ].map((item, i) => (
-            <ListItem key={`phase-5-item-${i}`}>
-              <Text>{item}</Text>
-            </ListItem>
-          ))}
+          {[`Take to the branches sloths and defend your forest!!!`].map(
+            (item, i) => (
+              <ListItem key={`phase-4-item-${i}`}>
+                <Text>{item}</Text>
+              </ListItem>
+            )
+          )}
         </List>
       ),
     },
@@ -159,6 +126,7 @@ const PhaseItem = ({ title, body }: Phase) => (
 export const Phases = () => {
   return (
     <Flex
+      minH={'100vh'}
       id={'junglemap'}
       justify={'center'}
       py={20}

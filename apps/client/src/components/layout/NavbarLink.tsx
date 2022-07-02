@@ -1,15 +1,21 @@
-import { useBreakpointValue, useTheme } from '@chakra-ui/react';
+import { LinkProps, useBreakpointValue, useTheme } from '@chakra-ui/react';
 import { useEffect, useRef } from 'react';
 import { NAVBAR_HEIGHTS } from '../../constants';
 import { Props } from '../../interfaces/component';
 import { Link } from '../Link';
 
-interface NavbarLinkProps extends Props {
+interface NavbarLinkProps extends Props, LinkProps {
   isActive: boolean;
   to: string;
+  props?: LinkProps;
 }
 
-export const NavbarLink = ({ children, to, isActive }: NavbarLinkProps) => {
+export const NavbarLink = ({
+  children,
+  to,
+  isActive,
+  props,
+}: NavbarLinkProps) => {
   const theme = useTheme();
 
   const isBelowLg = useBreakpointValue({ base: true, lg: false });
@@ -23,7 +29,7 @@ export const NavbarLink = ({ children, to, isActive }: NavbarLinkProps) => {
     <Link
       fontWeight={700}
       textTransform="lowercase"
-      fontSize="lg"
+      fontSize="xl"
       href={`/#${to}`}
       onClick={(e) => {
         e.preventDefault();
@@ -42,6 +48,7 @@ export const NavbarLink = ({ children, to, isActive }: NavbarLinkProps) => {
         color: 'orange',
         textDecoration: 'none',
       }}
+      {...props}
     >
       {children}
     </Link>

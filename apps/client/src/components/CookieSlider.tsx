@@ -26,9 +26,10 @@ export const CookieSlider = () => {
             setOpen(false);
             setCookie('__cookies', { accepted: true }, { path: '/' });
           }}
-          colorScheme={'whiteAlpha'}
-          variant={{ base: 'link', md: 'outline' }}
+          variant={'outline'}
           fontWeight={'700'}
+          _hover={{ bg: 'transparent' }}
+          _active={{ bg: 'transparent' }}
         >
           Accept
         </Button>

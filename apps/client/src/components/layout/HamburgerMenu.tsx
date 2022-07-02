@@ -34,7 +34,7 @@ export const HamburgerMenu = ({ activeSectionId }: HamburgerMenuProps) => {
         <Box
           borderLeftRadius={{ base: 0, sm: 8 }}
           w={'100%'}
-          h={'100%'}
+          h={'100vh'}
           px={4}
           bg="gray.700"
         >

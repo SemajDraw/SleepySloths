@@ -6,14 +6,14 @@ import {
   AccordionPanel,
   Container,
   Flex,
-  Heading,
+  Heading as ChakraHeading,
   Image,
   Stack,
   Text as ChakraText,
   useBreakpointValue,
 } from '@chakra-ui/react';
 
-import { Box, Text } from 'ui';
+import { Box, Heading, Text } from 'ui';
 
 interface PanelProps {
   title: string;
@@ -24,32 +24,26 @@ const panels: PanelProps[] = [
   {
     title: 'What is this project about?',
     content:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+      'Owning a Sleepy Sloth shows you are one of the NFT collectors that values the slower things in life. Sloths are slow and steady but also adorable, no animal looks cuter while being so lazy.',
   },
   {
-    title: 'Are the NFT pictures real?',
+    title: 'Are the NFT pictures of real Sloths?',
     content:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+      'OF COURSE... not, our sloths are all computer generated using the most forest friendly A.I. we could develop',
   },
   {
-    title: 'Are the eyebrows real?',
+    title: 'Do Sloths not get tired hanging around all day?',
     content:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+      "Though were not absolutely certain how our sleepy friends hang around all day, it's thought Sloths can quickly reproduce the fuel of the muscle cell Adenosine Triphosphate (ATP)",
   },
   {
     title: 'What are the benefits of owning this NFT?',
     content:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-  },
-  {
-    title: 'Are you open to collaborations?',
-    content:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+      "You'll own a completely unique piece of super cool super sleepy art",
   },
   {
     title: 'Wen lambo?',
-    content:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    content: "We're Sloths ser we say, wen nap!?!",
   },
 ];
 
@@ -71,9 +65,9 @@ export const Faq = () => {
           justify={'center'}
         >
           <Flex direction={'column'} align={'center'} justify={'end'} mr={4}>
-            <Heading fontSize={'calc((2.2 - 1) * 1.2vw + 1rem)'} pb={8}>
+            <ChakraHeading fontSize={'calc((2.2 - 1) * 1.2vw + 1rem)'} pb={8}>
               WTF?
-            </Heading>
+            </ChakraHeading>
             <Image
               display={{ base: 'none', md: 'inherit' }}
               rounded={'md'}
@@ -95,7 +89,7 @@ export const Faq = () => {
                 <AccordionItem key={`accordian-item-${i}`} mb={4}>
                   {({ isExpanded }: { isExpanded: boolean }) => (
                     <>
-                      <Text
+                      <Heading
                         bg={'white'}
                         whileHover={{ scale: 1.025 }}
                         whileTap={{ scale: 0.975 }}
@@ -126,7 +120,7 @@ export const Faq = () => {
                             <ChevronRightIcon boxSize={6} />
                           </Box>
                         </AccordionButton>
-                      </Text>
+                      </Heading>
                       <AccordionPanel bg={'gray.200'} pb={4}>
                         {panel.content}
                       </AccordionPanel>

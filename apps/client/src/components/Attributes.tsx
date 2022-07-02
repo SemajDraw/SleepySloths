@@ -14,12 +14,15 @@ export const Attributes = () => {
         {attributes.map((attribute, i) => (
           <GridItem
             colSpan={{ base: 2, md: 1 }}
+            borderRadius={10}
             key={`grid-item-${i}`}
             bg="white"
             p={4}
           >
             <Flex w={'100%'} h={'100%'} align={'center'} justify={'center'}>
-              <Text noOfLines={1}>{attribute}</Text>
+              <Text fontWeight={'800'} fontSize={'xl'} noOfLines={1}>
+                {attribute}
+              </Text>
             </Flex>
           </GridItem>
         ))}

@@ -1,6 +1,6 @@
 import {
-  Box,
   Container,
+  Flex,
   Stack,
   Text,
   useColorModeValue,
@@ -10,10 +10,13 @@ import { SocialButtonStack } from '../SocialButtonsStack';
 
 export const Footer = () => {
   return (
-    <Box
+    <Flex
+      minH={'10vh'}
       as={'footer'}
       bg={useColorModeValue('gray.50', 'gray.900')}
       color={useColorModeValue('gray.700', 'gray.200')}
+      align={'center'}
+      justify={'center'}
     >
       <Container
         as={Stack}
@@ -27,6 +30,6 @@ export const Footer = () => {
         <Text>{COPYRIGHT_STATEMENT}</Text>
         <SocialButtonStack direction={'row'} spacing={6} />
       </Container>
-    </Box>
+    </Flex>
   );
 };

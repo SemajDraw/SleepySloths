@@ -13,6 +13,7 @@ export const Home = () => {
       pt={{ base: 10, lg: 12 }}
       pb={{ base: 12, lg: 12 }}
       justify={'space-between'}
+      overflow={'hidden'}
     >
       <Hero />
       <Attributes />

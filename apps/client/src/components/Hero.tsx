@@ -52,9 +52,9 @@ export const Hero = () => {
             <CountDown />
             <Text>Until Mint</Text>
           </Stack>
-          <Flex justify={'center'}>
+          {/* <Flex justify={'center'}>
             <MintButton />
-          </Flex>
+          </Flex> */}
         </Stack>
       </Stack>
     </Container>

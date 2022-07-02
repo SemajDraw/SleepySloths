@@ -1032,6 +1032,16 @@
     "@ethersproject/properties" "^5.6.0"
     "@ethersproject/strings" "^5.6.1"
 
+"@fontsource/finger-paint@^4.5.8":
+  version "4.5.8"
+  resolved "https://registry.yarnpkg.com/@fontsource/finger-paint/-/finger-paint-4.5.8.tgz#cc53240051b110cac409e98d18d45a51a60fed0a"
+  integrity sha512-FN0sttTC9Bntbv19akVCRdIXLM9ntLFJKengA6ae8nQy0uZLdf5nt2YgfuWqkul6aF9mdMJuCMe575G5QQMYFw==
+
+"@fontsource/indie-flower@^4.5.8":
+  version "4.5.8"
+  resolved "https://registry.yarnpkg.com/@fontsource/indie-flower/-/indie-flower-4.5.8.tgz#79e94aef326533d51722a58820b1676157b5748e"
+  integrity sha512-75SuZkxFxVIeeU1ZJzuAnG76sXiBbDMwY9zJ26yAfCK95GJRYrdzDuIGCfsDrouK/Z5aO+AN7bkF8iEFoRXnHg==
+
 "@graphql-tools/batch-execute@8.4.10":
   version "8.4.10"
   resolved "https://registry.yarnpkg.com/@graphql-tools/batch-execute/-/batch-execute-8.4.10.tgz#7f5573876a585b88106613a2c320013b09b80f25"
@@ -3428,16 +3438,7 @@ escape-string-regexp@^1.0.5:
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
   integrity sha512-vbRorB5FUQWvla16U8R/qgaFIya2qGzwDrNmCZuYKrbdSUMG6I1ZCGQRefkRVhuOkIGVne7BQ35DSfo1qvJqFg==
 
-eslint-config-custom@latest:
-  version "0.0.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-custom/-/eslint-config-custom-0.0.0.tgz#7829bdd98e657a63b03377538b5675c811247cf0"
-  integrity sha512-kwCw78yisbgKdJBJ5qooPmpBYDphDfM2oxSROmtfOwBXBwXuRiSV3suO01W3mVLEFpmQZxMWd/qajKpJhkKSug==
-  dependencies:
-    eslint-config-next "^12.0.8"
-    eslint-config-prettier "^8.3.0"
-    eslint-plugin-react "7.28.0"
-
-eslint-config-next@^12.0.8:
+eslint-config-next@12.1.6:
   version "12.1.6"
   resolved "https://registry.yarnpkg.com/eslint-config-next/-/eslint-config-next-12.1.6.tgz#55097028982dce49159d8753000be3916ac55254"
   integrity sha512-qoiS3g/EPzfCTkGkaPBSX9W0NGE/B1wNO3oWrd76QszVGrdpLggNqcO8+LR6MB0CNqtp9Q8NoeVrxNVbzM9hqA==
@@ -3452,7 +3453,7 @@ eslint-config-next@^12.0.8:
     eslint-plugin-react "^7.29.4"
     eslint-plugin-react-hooks "^4.5.0"
 
-eslint-config-prettier@^8.3.0:
+eslint-config-prettier@8.5.0:
   version "8.5.0"
   resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-8.5.0.tgz#5a81680ec934beca02c7b1a61cf8ca34b66feab1"
   integrity sha512-obmWKLUNCnhtQRKc+tmnYuQl0pFU1ibYJQ5BGhTVB08bHe9wC8qUeG7c08dj9XX+AuPj1YSGSQIHl1pnDHZR0Q==
