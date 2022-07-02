@@ -5,7 +5,7 @@ import { CookiesProvider } from 'react-cookie';
 import { CookieSlider } from '../components/CookieSlider';
 
 import { Layout } from '../components/layout/Layout';
-import theme from '../theme';
+import theme from '../theme/theme';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

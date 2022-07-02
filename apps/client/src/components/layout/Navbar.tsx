@@ -1,9 +1,14 @@
-import { Box, Flex, Stack, Text, useBreakpointValue } from '@chakra-ui/react';
+import {
+  Box as ChakraBox,
+  Flex,
+  Stack,
+  Text,
+  useBreakpointValue,
+} from '@chakra-ui/react';
 import throttle from 'lodash.throttle';
 import { memo, useEffect, useState } from 'react';
-import { animated, config, useSpring } from 'react-spring';
+import { Box } from 'ui';
 import {
-  getNavbarAnimationStyles,
   NAVBAR_HEIGHTS,
   NAVBAR_STATES,
   SCROLL_DIRECTIONS,
@@ -16,20 +21,11 @@ import { SocialButtonStack } from '../SocialButtonsStack';
 import { HamburgerMenu } from './HamburgerMenu';
 import { NavbarLink } from './NavbarLink';
 
-const AnimatedBox = animated(Box);
-
 export const Navbar = memo(function Navbar() {
   const activeSectionId = useActiveId(SECTIONS.map((section) => section.id));
   const [navbarState, setNavbarState] = useState(NAVBAR_STATES.INITIAL);
   const isMdDown = useBreakpointValue({ base: true, md: false });
   const { scrollDirection } = useScrollInfo();
-  const animatedValues = useSpring({
-    ...getNavbarAnimationStyles({
-      state: navbarState,
-      isMdDown: Boolean(isMdDown),
-    }),
-    config: { ...config.gentle, clamp: true },
-  });
 
   useEffect(() => {
     const onScroll = throttle(() => {
@@ -72,15 +68,14 @@ export const Navbar = memo(function Navbar() {
   }, [isMdDown, navbarState, scrollDirection]);
 
   return (
-    <AnimatedBox
+    <Box
       bg={navbarState === NAVBAR_STATES.INITIAL ? 'black' : 'gray.800'}
-      pos="sticky"
+      position="sticky"
       top={0}
       height={{
         base: `${NAVBAR_HEIGHTS.MOBILE}px`,
         md: `${NAVBAR_HEIGHTS.DESKTOP}px`,
       }}
-      style={animatedValues}
       zIndex={2}
     >
       <Flex align={'center'} height={'100%'} px={12}>
@@ -90,7 +85,7 @@ export const Navbar = memo(function Navbar() {
           justify={'space-between'}
           direction="row"
         >
-          <Box display={{ base: 'none', md: 'inherit' }}>
+          <ChakraBox display={{ base: 'none', md: 'inherit' }}>
             <Link
               _hover={{
                 textDecoration: 'none',
@@ -101,7 +96,7 @@ export const Navbar = memo(function Navbar() {
                 Sleepy Sloths
               </Text>
             </Link>
-          </Box>
+          </ChakraBox>
           <Stack direction={'row'} spacing={6}>
             {SECTIONS.map((section) => (
               <Flex align={'center'} key={section.id}>
@@ -126,7 +121,7 @@ export const Navbar = memo(function Navbar() {
           justify={{ base: 'space-between', md: 'flex-end' }}
           display={{ base: 'flex', sm: 'none' }}
         >
-          <Box>
+          <ChakraBox>
             <Link
               _hover={{
                 textDecoration: 'none',
@@ -137,12 +132,12 @@ export const Navbar = memo(function Navbar() {
                 ICON
               </Text>
             </Link>
-          </Box>
-          <Box>
+          </ChakraBox>
+          <ChakraBox>
             <HamburgerMenu activeSectionId={activeSectionId} />
-          </Box>
+          </ChakraBox>
         </Flex>
       </Flex>
-    </AnimatedBox>
+    </Box>
   );
 });

@@ -2,7 +2,7 @@ import { Container, Flex, Grid, GridItem, Text } from '@chakra-ui/react';
 
 const attributes: string[] = [
   '6969 Sleepy Sloths',
-  'NFT Breeding',
+  'Absolutely Adorable',
   '1 Million+ Combos',
   'A.I. Generative',
 ];
