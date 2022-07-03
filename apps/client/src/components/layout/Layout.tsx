@@ -5,7 +5,7 @@ import { Navbar } from './Navbar';
 
 export const Layout = ({ children }: Props) => {
   return (
-    <Box h={'100%'} w={'100%'} maxWidth={'1800px'}>
+    <Box h={'100%'} w={'100%'} maxWidth={'1800px'} bg={'gray.100'}>
       <Navbar />
       {children}
       <Footer />

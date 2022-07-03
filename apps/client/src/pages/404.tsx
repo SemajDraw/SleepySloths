@@ -1,34 +1,47 @@
-import { Box, Heading, Text, Button } from '@chakra-ui/react';
+import { Button, Container, Heading, Text } from '@chakra-ui/react';
 import Link from 'next/link';
+import { Flex } from 'ui';
 
 const NotFound = () => {
   return (
-    <Box textAlign="center" py={10} px={6} h={'100vh'} w={'100vw'}>
-      <Heading
-        display="inline-block"
-        as="h2"
-        size="2xl"
-        bgGradient="linear(to-r, teal.400, teal.600)"
-        backgroundClip="text"
+    <Container h={'90vh'} w={'100vw'}>
+      <Flex
+        h={'100%'}
+        w={'100%'}
+        justify={'center'}
+        align={'center'}
+        direction={'column'}
       >
-        404
-      </Heading>
-      <Text fontSize="18px" mt={3} mb={2}>
-        Page Not Found
-      </Text>
-      <Text color={'gray.500'} mb={6}>
-        {"The page you're looking for does not seem to exist"}
-      </Text>
+        <Heading
+          display="inline-block"
+          as="h2"
+          fontSize="15rem"
+          bgGradient="linear(to-r, orange.400, gray.600)"
+          backgroundClip="text"
+        >
+          404
+        </Heading>
+        <Text fontSize="18px" mt={3} mb={2}>
+          Page Not Found
+        </Text>
+        <Text color={'gray.500'} mb={6}>
+          {"The page you're looking for does not exist"}
+        </Text>
 
-      <Button
-        colorScheme="teal"
-        bgGradient="linear(to-r, teal.400, teal.500, teal.600)"
-        color="white"
-        variant="solid"
-      >
-        <Link href={'/'}>Go to Home</Link>
-      </Button>
-    </Box>
+        <Button
+          bgGradient="linear(to-r, orange.400, gray.600)"
+          color="white"
+          variant="solid"
+          _hover={{
+            bgGradient: 'linear(to-r, orange.400, gray.600)',
+            opacity: 0.8,
+          }}
+          _active={{ bgGradient: 'linear(to-r, orange.400, gray.600)' }}
+        >
+          <Link href={'/'}>Back to SleepySloths</Link>
+        </Button>
+      </Flex>
+    </Container>
   );
 };
 
