@@ -1,9 +1,11 @@
+import { ChevronRightIcon } from '@chakra-ui/icons';
 import {
   Box as ChakraBox,
   Flex,
   GridItem,
   Heading,
   List,
+  ListIcon,
   ListItem,
   SimpleGrid,
   Stack,
@@ -21,22 +23,40 @@ interface Phase {
   };
 }
 
+const PhaseList = ({
+  phaseId,
+  listItems,
+}: {
+  phaseId: number;
+  listItems: string[];
+}) => (
+  <List>
+    {listItems.map((item, i) => (
+      <ListItem key={`phase-${phaseId}-item-${i}`}>
+        <Flex>
+          <Box>
+            <ChevronRightIcon />
+          </Box>
+          <Text>{item}</Text>
+        </Flex>
+      </ListItem>
+    ))}
+  </List>
+);
+
 const phases: Phase[] = [
   {
     title: 'PHASE 1',
     body: {
       title: 'UGHHH, WH... WHERE AM I?',
       body: (
-        <List>
-          {[
+        <PhaseList
+          phaseId={1}
+          listItems={[
             'Sleepy Sloths are woken from their once eternal slumbar',
             "Where's my coffee!!??",
-          ].map((item, i) => (
-            <ListItem key={`phase-1-item-${i}`}>
-              <Text>{item}</Text>
-            </ListItem>
-          ))}
-        </List>
+          ]}
+        />
       ),
     },
   },
@@ -45,16 +65,13 @@ const phases: Phase[] = [
     body: {
       title: 'WARNING: INCOMING MONSOON SEASON',
       body: (
-        <List>
-          {[
+        <PhaseList
+          phaseId={2}
+          listItems={[
             'ETH Giveaway to 1 lucky minter when all Sleepy Sloths have found their trees',
             '10 Sleepy Sloths Airdropped',
-          ].map((item, i) => (
-            <ListItem key={`phase-1-item-${i}`}>
-              <Text>{item}</Text>
-            </ListItem>
-          ))}
-        </List>
+          ]}
+        />
       ),
     },
   },
@@ -64,15 +81,10 @@ const phases: Phase[] = [
     body: {
       title: 'READY THE BATTLE BRANCHES!',
       body: (
-        <List>
-          {[`Take to the branches sloths and defend your forest!!!`].map(
-            (item, i) => (
-              <ListItem key={`phase-4-item-${i}`}>
-                <Text>{item}</Text>
-              </ListItem>
-            )
-          )}
-        </List>
+        <PhaseList
+          phaseId={3}
+          listItems={[`Take to the branches sloths and defend your forest!!!`]}
+        />
       ),
     },
   },
@@ -103,7 +115,7 @@ const PhaseItem = ({ title, body }: Phase) => (
   >
     <SimpleGrid columns={13}>
       <GridItem colSpan={{ base: 12, md: 5 }} pb={3}>
-        <Heading w={'100%'} fontSize={'calc((2.2 - 1) * 1.2vw + 1rem)'}>
+        <Heading w={'100%'} fontSize={'calc(1.2 * 1.2vw + 1rem)'}>
           {title}
         </Heading>
       </GridItem>
@@ -111,10 +123,10 @@ const PhaseItem = ({ title, body }: Phase) => (
 
       <GridItem colSpan={{ base: 12, md: 7 }}>
         <Stack direction={'column'}>
-          <Heading fontSize={'calc((2.2 - 1) * 1.2vw + 1rem)'} pb={3}>
+          <Heading fontSize={'calc(1.2 * 1.2vw + 1rem)'} pb={3}>
             {body.title}
           </Heading>
-          <ChakraBox fontSize={'calc((1.2 - 1) * 1.2vw + 1rem)'}>
+          <ChakraBox fontSize={'calc(0.2 * 1.2vw + 1.2rem)'}>
             {body.body}
           </ChakraBox>
         </Stack>

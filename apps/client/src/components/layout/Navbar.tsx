@@ -84,7 +84,7 @@ export const Navbar = memo(function Navbar() {
               }}
               href={'/'}
             >
-              <Heading fontSize={'3xl'} fontWeight={700}>
+              <Heading color={'white'} fontSize={'3xl'} fontWeight={700}>
                 SleepySloths
               </Heading>
             </Link>

@@ -50,14 +50,20 @@ const panels: PanelProps[] = [
 export const Faq = () => {
   return (
     <Flex
+      direction={'column'}
       id={'faq'}
       w={'100%'}
       py={{ base: 6, lg: 14 }}
       bg={'gray.200'}
       align={'center'}
       justify={'center'}
-      minH={'90vh'}
+      minH={{ base: '80vh', sm: '90vh' }}
     >
+      <Flex pb={10} align={'center'} justify={'center'}>
+        <ChakraHeading fontSize={'calc((2.2 - 1) * 1.2vw + 1rem)'} pb={8}>
+          WTF?
+        </ChakraHeading>
+      </Flex>
       <Container maxW={'7xl'}>
         <Flex
           direction={useBreakpointValue({ base: 'column', md: 'row' })}
@@ -65,9 +71,6 @@ export const Faq = () => {
           justify={'center'}
         >
           <Flex direction={'column'} align={'center'} justify={'end'} mr={4}>
-            <ChakraHeading fontSize={'calc((2.2 - 1) * 1.2vw + 1rem)'} pb={8}>
-              WTF?
-            </ChakraHeading>
             <Image
               display={{ base: 'none', md: 'inherit' }}
               rounded={'md'}
@@ -99,12 +102,11 @@ export const Faq = () => {
                           stiffness: 150,
                         }}
                         as={'h2'}
-                        fontSize={'xl'}
                       >
                         <AccordionButton bg={'white'} p={6}>
                           <Flex flex="1" textAlign="left" align={'center'}>
                             <AddIcon boxSize={4} mr={3} />
-                            <ChakraText fontSize={'2xl'}>
+                            <ChakraText fontSize={'calc(0.6 * 1.2vw + 1rem)'}>
                               {panel.title}
                             </ChakraText>
                           </Flex>
@@ -121,7 +123,11 @@ export const Faq = () => {
                           </Box>
                         </AccordionButton>
                       </Heading>
-                      <AccordionPanel bg={'gray.200'} pb={4}>
+                      <AccordionPanel
+                        bg={'gray.200'}
+                        pb={4}
+                        fontSize={'calc(0.2 * 1.2vw + 1.2rem)'}
+                      >
                         {panel.content}
                       </AccordionPanel>
                     </>
