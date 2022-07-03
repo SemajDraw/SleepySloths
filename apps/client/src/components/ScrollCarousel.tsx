@@ -1,5 +1,5 @@
 import { Box, Image } from '@chakra-ui/react';
-import { useTransform, useViewportScroll, Variants } from 'framer-motion';
+import { useTransform, useViewportScroll } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { Flex } from 'ui';
 

@@ -13,7 +13,7 @@ import {
   useBreakpointValue,
 } from '@chakra-ui/react';
 
-import { Box, Heading, Text } from 'ui';
+import { Box, Heading } from 'ui';
 
 interface PanelProps {
   title: string;

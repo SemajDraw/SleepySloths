@@ -1,26 +1,21 @@
-import { useEffect, useState } from 'react';
 import {
   Box,
-  Flex,
-  Slide,
-  VStack,
-  useBreakpointValue,
   Drawer,
-  DrawerOverlay,
-  DrawerContent,
-  DrawerCloseButton,
-  DrawerHeader,
   DrawerBody,
-  Input,
+  DrawerContent,
   DrawerFooter,
-  Button,
-  useDisclosure,
+  DrawerHeader,
+  DrawerOverlay,
+  Flex,
   Heading,
+  useBreakpointValue,
+  useDisclosure,
 } from '@chakra-ui/react';
 import { Slant as Hamburger } from 'hamburger-react';
+import { useEffect } from 'react';
 import { SECTIONS } from '../../constants';
-import { NavbarLink } from './NavbarLink';
 import { SocialButtonStack } from '../SocialButtonsStack';
+import { NavbarLink } from './NavbarLink';
 
 interface HamburgerMenuProps {
   activeSectionId: string;

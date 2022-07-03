@@ -1,8 +1,6 @@
 import { Container, Flex, Heading, Image, Stack, Text } from '@chakra-ui/react';
 import { CountDown } from './CountDown';
 
-import { MintButton } from './MintButton';
-
 export const Hero = () => {
   return (
     <Container maxW={'7xl'}>

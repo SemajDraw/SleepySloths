@@ -5,7 +5,6 @@ import {
   GridItem,
   Heading,
   List,
-  ListIcon,
   ListItem,
   SimpleGrid,
   Stack,
